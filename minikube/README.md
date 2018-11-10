@@ -1,4 +1,4 @@
-# eq-exp task:
+# task:
 
 Write a simple hello world application in either of these languages: Python, Ruby, Go. Build the application within a Docker container and then load balance the application within a mini kube.
 
@@ -16,11 +16,7 @@ This project is aiming to deploy a basic go application on minikube so it requir
 
 Deployment
 -----------
-
-## Quickstart
-
 the `Dockerfile` in this repo has been built and pushed to my personal public repo in `hub.docker.com` which includes the simple app the image is being used in the deployment below
-
 
 If you want to change the VM driver add the appropriate `--vm-driver=xxx` flag to `minikube start`. Minikube supports
 the following drivers:
