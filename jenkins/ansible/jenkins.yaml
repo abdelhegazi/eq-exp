@@ -5,6 +5,6 @@
   become: True
   roles:
     - jenkins
-    - geerlingguy.jenkins
+#    - geerlingguy.jenkins
 #   set_fact:
 #     ansible_port: 2222
