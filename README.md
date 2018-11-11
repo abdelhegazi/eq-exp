@@ -7,6 +7,7 @@ The hierarchy here is as follow:
 
 - jenkins: this directory sets up `jenkins` server laveraging `Vagrantfile` and `ansible` 
 
-- minikune: this directory explains steps to start a `minikune` and to deploy an app written and packed into a `docker` image
+- minikune: this directory explains steps to start a `minikube` and to deploy a `go` app written and packed into a `docker` image and aimed to deploy it to `minikube` using `helm`. the application is packaged as a `helm-chart` and all images are pushed to my personal public docker hub repo 
+
 
 
