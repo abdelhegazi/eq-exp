@@ -1,5 +1,9 @@
-- name: add oracle java sources
-  shell : " sudo add-apt-repository ppa:webupd8team/java"
+- apt_repository:
+    repo: 'ppa:webupd8team/java'
+    codename: xenial
+
+# - name: add oracle java sources
+#   shell : " sudo add-apt-repository ppa:webupd8team/java"
 
 - name: Update and upgrade apt packages
   become: true
@@ -32,8 +36,16 @@
 - name: add jenkins repo
   shell: "echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list"
 
+# - name: Update and upgrade apt packages
+#   become: true
+#   apt:
+#     upgrade: yes
+#     update_cache: yes
+#     cache_valid_time: 86400 #One day
+
 - name: Update apt
   shell: "apt-get -y update"
+
 - name: reconfigure dpkg
   shell: "sudo dpkg --configure -a"
 
