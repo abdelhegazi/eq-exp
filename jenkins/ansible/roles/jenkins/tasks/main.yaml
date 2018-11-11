@@ -1,5 +1,5 @@
 - name: add oracle java sources
-  shell : "add-apt-repository ppa:webupd8team/java"
+  shell : " sudo add-apt-repository ppa:webupd8team/java"
 
 - name: Update and upgrade apt packages
   become: true
@@ -17,14 +17,14 @@
       - linux-tools-generic
       - linux-cloud-tools-generic
       - htop
+      - default-jre
+      - default-jdk
 
-- name: install oracle java8 installer
-  apt:
-    name: oracle-java8-installer
-    state: present
+#- name: install java8
+#  shell: "apt -y install oracle-java8-installer"
 
-- name: set java alternative
-  shell: "update-java-alternatives -s java-8-oracle"
+#- name: set java alternative
+#  shell: "update-alternatives --config java "
 
 - name: apt-key for jenkins repo
   shell: "wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | apt-key add - > /dev/null 2>&1"
@@ -32,15 +32,13 @@
 - name: add jenkins repo
   shell: "echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list"
 
-- name: Update and upgrade apt packages
-  become: true
-  apt:
-    upgrade: yes
-    update_cache: true
-    cache_valid_time: 86400
+- name: Update apt
+  shell: "apt-get -y update"
+- name: reconfigure dpkg
+  shell: "sudo dpkg --configure -a"
 
 - name: install jenkins binary
-  apt: 
+  apt:
     name: jenkins
     state: present
-  notify: restart jenkins  
+  notify: restart jenkins
