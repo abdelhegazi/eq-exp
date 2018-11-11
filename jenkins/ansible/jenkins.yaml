@@ -4,6 +4,7 @@
   name: Jenkins setup
   become: True
   roles:
-    - { role: jenkins }
+    - jenkins
+    - geerlingguy.jenkins
 #   set_fact:
 #     ansible_port: 2222

@@ -1,6 +1,0 @@
----
-- hosts: all
-  name: Jenkins setup
-  become: True
-  roles:
-    - { role: jenkins }

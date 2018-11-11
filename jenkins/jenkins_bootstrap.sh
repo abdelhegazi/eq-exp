@@ -47,8 +47,9 @@ apt-get -y -q update
 apt-get -y -q upgrade
 apt-get -y -q install software-properties-common ansible
 
-cd 
-ansible-playbook -i inventory ansible/jenkins.yaml
+git clone https://github.com/abdelhegazi/eq-exp.git
+cd eq-exp/jenkins
+ansible-playbook -i inventory ansible/jenkins.yaml -vvvv
 
 # echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
 # apt-get -y -q install oracle-java8-installer
