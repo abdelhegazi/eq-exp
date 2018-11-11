@@ -2,6 +2,7 @@ Jenkins setup
 --------------
 
 ```
+$ cd ./eq-exp/jenkins
 $ vagrant up
 
 ```
@@ -10,34 +11,18 @@ It will ask you for your root password to the record to hosts file, you should e
 
 ```
 ...
-    jenkins: (Reading database ... 45%
-    jenkins: (Reading database ... 50%
-    jenkins: (Reading database ... 55%
-    jenkins: (Reading database ... 60%
-    jenkins: (Reading database ... 65%
-    jenkins: (Reading database ... 70%
-    jenkins: (Reading database ... 75%
-    jenkins: (Reading database ... 80%
-    jenkins: (Reading database ... 85%
-    jenkins: (Reading database ... 90%
-    jenkins: (Reading database ... 95%
-    jenkins: (Reading database ... 100%
-    jenkins: (Reading database ... 
-    jenkins: 56525 files and directories currently installed.)
-    jenkins: Preparing to unpack .../daemon_0.6.4-1_amd64.deb ...
-    jenkins: Unpacking daemon (0.6.4-1) ...
-    jenkins: Selecting previously unselected package jenkins.
-    jenkins: Preparing to unpack .../jenkins_2.138.3_all.deb ...
-    jenkins: Unpacking jenkins (2.138.3) ...
-    jenkins: Processing triggers for man-db (2.7.5-1) ...
-    jenkins: Processing triggers for systemd (229-4ubuntu21.6) ...
-    jenkins: Processing triggers for ureadahead (0.100.0-19) ...
-    jenkins: Setting up daemon (0.6.4-1) ...
-    jenkins: Setting up jenkins (2.138.3) ...
-    jenkins: Processing triggers for systemd (229-4ubuntu21.6) ...
-    jenkins: Processing triggers for ureadahead (0.100.0-19) ...
+    jenkins:         "Wants": "network-online.target", 
+    jenkins:         "WatchdogTimestampMonotonic": "0", 
+    jenkins:         "WatchdogUSec": "0"
+    jenkins:     }
+    jenkins: }
+    jenkins: META: ran handlers
+    jenkins: META: ran handlers
+    jenkins: 
+    jenkins: PLAY RECAP *********************************************************************
+    jenkins: 127.0.0.1                  : ok=10   changed=8    unreachable=0    failed=0   
     jenkins: -- ---------------- --
-    jenkins: -- END BOOTSTRAPING --
+    jenkins: -- END Installation --
     jenkins: -- ---------------- --
 
 ```
