@@ -107,7 +107,7 @@ name
 main
 
 
-$ fly -t eexpert set-pipeline -c pipeline.yml -p hello-world
+$ fly -t eexpert set-pipeline -c pipeline.yaml -p hello-world
 jobs:
   job job-hello-world has been added:
     name: job-hello-world
@@ -139,3 +139,5 @@ $ fly -t eexpert unpause-pipelin -p hello-world
 $ fly -t eexpert trigger-job -j hello-world/job-hello-world
 
 ```
+
+Now checkout your browser `http://192.168.100.4:8080/teams/main/` you should see you have triggered the job inside the pipeline.

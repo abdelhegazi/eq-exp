@@ -1,0 +1,36 @@
+- name: install oracle java8 installer
+  apt:
+    name: oracle-java8-installer
+    state: present
+
+- name: install tools-generic
+  apt:
+    name: "{{ packages}}"
+  vars:
+    packages:
+      - software-properties-common
+      - linux-tools-generic
+      - linux-cloud-tools-generic
+      - htop
+
+- name: set java alternative
+  shell: "update-java-alternatives -s java-8-oracle"
+
+- name: apt-key for jenkins repo
+  shell: "wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | apt-key add - > /dev/null 2>&1"
+
+- name: add jenkins repo
+  shell: "echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list"
+
+- name: Update and upgrade apt packages
+  become: true
+  apt:
+    upgrade: yes
+    update_cache: True
+    cache_valid_time: 86400
+
+- name: install jenkins binary
+  apt: 
+    name: jenkins
+    state: present
+  notify: restart jenkins  

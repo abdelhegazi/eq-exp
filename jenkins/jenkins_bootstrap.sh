@@ -44,18 +44,24 @@ service apache2 restart
 add-apt-repository ppa:webupd8team/java
 apt-get -y -q update
 apt-get -y -q upgrade
-apt-get -y -q install software-properties-common htop
-echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
-apt-get -y -q install oracle-java8-installer
-apt-get -y -q install linux-tools-generic linux-cloud-tools-generic
-update-java-alternatives -s java-8-oracle
+apt-get -y -q install software-properties-common
+
+# Install ansible
+sudo apt-add-repository --yes --update ppa:ansible/ansible
+sudo apt-get install ansible
+
+
+# echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
+# apt-get -y -q install oracle-java8-installer
+# apt-get -y -q install linux-tools-generic linux-cloud-tools-generic
+# update-java-alternatives -s java-8-oracle
  
-# INSTALLING JENKINS
-wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | apt-key add - > /dev/null 2>&1
-sh -c "echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list"
+# # INSTALLING JENKINS  
+# wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | apt-key add - > /dev/null 2>&1
+# sh -c "echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list"
  
-apt-get update -y -qq
-apt-get install jenkins -y -qq
+# apt-get update -y -qq
+# apt-get install jenkins -y -qq
 
 echo -e "-- ---------------- --"
 echo -e "-- END Installation --"
