@@ -41,15 +41,14 @@ EOF
 service apache2 restart
  
 # INSTALLING JAVA
-add-apt-repository ppa:webupd8team/java
+# add-apt-repository ppa:webupd8team/java
+apt-add-repository ppa:ansible/ansible
 apt-get -y -q update
 apt-get -y -q upgrade
-apt-get -y -q install software-properties-common
+apt-get -y -q install software-properties-common ansible
 
-# Install ansible
-sudo apt-add-repository --yes --update ppa:ansible/ansible
-sudo apt-get install ansible
-
+cd 
+ansible-playbook -i inventory ansible/jenkins.yaml
 
 # echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
 # apt-get -y -q install oracle-java8-installer

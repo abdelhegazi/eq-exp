@@ -1,9 +1,10 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
  
+
 Vagrant.configure("2") do |config|
     config.vm.box = "ubuntu/xenial64"
- 
+    config.ssh.insert_key = false
     config.vm.define :jenkins do |jenkins_config|
         jenkins_config.vm.hostname = 'jenkins'
         jenkins_config.vm.network "private_network", ip: "192.168.10.11"
@@ -15,5 +16,9 @@ Vagrant.configure("2") do |config|
  
     config.vm.provision :shell, path: "jenkins_bootstrap.sh"
  
+    config.vm.provision "ansible" do |ansible|
+        ansible.verbose = "vvv"
+        ansible.playbook = "jenkins.yaml"
+    end
     config.vm.synced_folder "", "/var/www/html", nfs: true, mount_options: ["actimeo=2"]
 end
