@@ -8,6 +8,7 @@ This vagrantfile deploys official `Concourse-lite` Vagrant image that is already
 start vagrant box and this should show up
 
 ```
+$ cd ./eq-exp/jenkins
 $ vagrant up
 Bringing machine 'default' up with 'virtualbox' provider...
 ==> default: Importing base box 'concourse/lite'...
