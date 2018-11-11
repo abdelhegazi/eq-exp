@@ -30,12 +30,11 @@ To switch back to this context later, run this command: `kubectl config use-cont
 
 
 
-Dashboard
+minikube
 ----------
-running `minikube dashboard` opens console to minikube in your browser where you can see what is going on 
-
-Note that the IP below is dynamic and can change. It can be retrieved with `minikube ip`.
-
+```
+cd ./eq-exp/minikube
+```
 
 ```shell
 $ minikube start --kubernetes-version v1.11.0
