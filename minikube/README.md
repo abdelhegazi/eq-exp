@@ -146,4 +146,4 @@ From that `nodePort` in our case is `30296` you access your application with
 ```
 $ curl 192.168.99.100:30296 
 ``` 
-or from your browser `192.168.99.100:30296`
+or from your browser `192.168.99.100:30296` just bear in mind the node port in your case may be different from 30269 just execute `kubectl get svc -n eqex` and you will see the right port number
