@@ -144,5 +144,6 @@ eqex-go-k8s-5d94c99856-p227m   1/1       Running   0          2m
 
 From that `nodePort` in our case is `30296` you access your application with 
 ```
-$ curl 192.168.99.100:30296  
-``` or from your browser
+$ curl 192.168.99.100:30296 
+``` 
+or from your browser 192.168.99.100:30296 
