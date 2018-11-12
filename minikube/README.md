@@ -59,10 +59,9 @@ Kubernetes master is running at https://192.168.99.100:8443
 CoreDNS is running at https://192.168.99.100:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 ```
 
-Notice this IP of the master node `192.168.99.100`
+- Notice this IP of the master node `192.168.99.100`
 
-```
-Download `helm` from https://github.com/helm/helm, follow instructions in `README.md` in helm repo on how to install helm binary
+- Download `helm` from https://github.com/helm/helm, follow instructions in `README.md` in helm repo on how to install helm binary
 
 Now lets deploy tiller
 ```
