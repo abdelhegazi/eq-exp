@@ -146,4 +146,4 @@ From that `nodePort` in our case is `30296` you access your application with
 ```
 $ curl 192.168.99.100:30296 
 ``` 
-or from your browser 192.168.99.100:30296 
+or from your browser `192.168.99.100:30296`
